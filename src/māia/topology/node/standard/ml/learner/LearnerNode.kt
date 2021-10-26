@@ -5,7 +5,7 @@ import māia.configure.asReconfigureBlock
 import māia.ml.dataset.DataBatch
 import māia.ml.dataset.DataRow
 import māia.ml.dataset.DataStream
-import māia.ml.dataset.WithColumnHeaders
+import māia.ml.dataset.WithColumns
 import māia.ml.learner.Learner
 import māia.topology.Node
 import māia.topology.NodeConfiguration
@@ -28,7 +28,7 @@ class LearnerNode : ContinuousLoopNode<LearnerNodeConfiguration> {
     val learnerInput by Input<Learner<*>>()
 
     @Throughput.WithMetadata("Initialises the learner")
-    val initialise by Input<WithColumnHeaders>()
+    val initialise by Input<WithColumns>()
 
     @Throughput.WithMetadata("Provides a data-set to train the learner on")
     val train by Input<DataStream<*>>()
@@ -72,14 +72,14 @@ class LearnerNode : ContinuousLoopNode<LearnerNodeConfiguration> {
                     inputs = inputListForLearner(learnerInstance)
                 }
                 initialise -> {
-                    learnerInstance.initialise(value as WithColumnHeaders)
+                    learnerInstance.initialise(value as WithColumns)
                     inputs = inputListForLearner(learnerInstance)
                 }
                 train -> {
                     if (learnerInstance.isIncremental)
                         (learnerInstance as Learner<DataStream<*>>).train(value as DataStream<*>)
                     else
-                        (learnerInstance as Learner<DataBatch<*, *>>).train(value as DataBatch<*, *>)
+                        (learnerInstance as Learner<DataBatch<*>>).train(value as DataBatch<*>)
                 }
                 else -> {
                     for (row in (value as DataStream<*>).rowIterator()) {
