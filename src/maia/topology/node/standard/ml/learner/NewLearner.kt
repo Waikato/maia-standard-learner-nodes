@@ -1,21 +1,21 @@
-package māia.topology.node.standard.ml.learner
+package maia.topology.node.standard.ml.learner
 
-import māia.configure.Configurable
-import māia.configure.Configuration
-import māia.configure.ConfigurationElement
-import māia.configure.ConfigurationItem
-import māia.configure.SubConfiguration
-import māia.configure.asReconfigureBlock
-import māia.configure.getConfigurationClassUntyped
-import māia.configure.getConfigurationObjectConstructorUntyped
-import māia.configure.util.classMatchesConfiguration
-import māia.configure.util.ifNotAbsent
-import māia.ml.learner.Learner
-import māia.ml.learner.factory.ConfigurableLearnerFactory
-import māia.topology.ExecutionState
-import māia.topology.Node
-import māia.topology.NodeConfiguration
-import māia.topology.node.base.Source
+import maia.configure.Configurable
+import maia.configure.Configuration
+import maia.configure.ConfigurationElement
+import maia.configure.ConfigurationItem
+import maia.configure.SubConfiguration
+import maia.configure.asReconfigureBlock
+import maia.configure.getConfigurationClassUntyped
+import maia.configure.getConfigurationObjectConstructorUntyped
+import maia.configure.util.classMatchesConfiguration
+import maia.configure.util.ifNotAbsent
+import maia.ml.learner.Learner
+import maia.ml.learner.factory.ConfigurableLearnerFactory
+import maia.topology.ExecutionState
+import maia.topology.Node
+import maia.topology.NodeConfiguration
+import maia.topology.node.base.Source
 import kotlin.reflect.KClass
 
 @Node.WithMetadata("Creates instances of a learner")

@@ -1,19 +1,19 @@
-package māia.topology.node.standard.ml.learner
+package maia.topology.node.standard.ml.learner
 
-import māia.configure.Configurable
-import māia.configure.asReconfigureBlock
-import māia.ml.dataset.DataBatch
-import māia.ml.dataset.DataRow
-import māia.ml.dataset.DataStream
-import māia.ml.dataset.WithColumns
-import māia.ml.learner.Learner
-import māia.topology.Node
-import māia.topology.NodeConfiguration
-import māia.topology.io.Input
-import māia.topology.io.Output
-import māia.topology.io.Throughput
-import māia.topology.io.util.allClosed
-import māia.topology.node.base.ContinuousLoopNode
+import maia.configure.Configurable
+import maia.configure.asReconfigureBlock
+import maia.ml.dataset.DataBatch
+import maia.ml.dataset.DataRow
+import maia.ml.dataset.DataStream
+import maia.ml.dataset.WithColumns
+import maia.ml.learner.Learner
+import maia.topology.Node
+import maia.topology.NodeConfiguration
+import maia.topology.io.Input
+import maia.topology.io.Output
+import maia.topology.io.Throughput
+import maia.topology.io.util.allClosed
+import maia.topology.node.base.ContinuousLoopNode
 
 
 @Node.WithMetadata("Node which handles the life-cycle of a learner")
